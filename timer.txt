@@ -1,0 +1,8 @@
+<h2>Timer</h2>
+<p id="timer"></p>
+<script>
+setInterval("my_function();",1000); 
+function my_function(){
+$('#refresh').load(document.getElementById('timer').innerHTML=timeCount);
+}
+    </script>
