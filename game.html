@@ -201,6 +201,13 @@ function processData(allText) {
     function makeMove(e)
     {
             if(timeCount==-1){
+	            
+	            var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('timer').innerHTML = --seconds_left;
+}, 1000);
+	            
+	            
                 timeCount=setTimeout(resetgame,20000);
                 }
         e = e || window.event;
@@ -346,23 +353,14 @@ function processData(allText) {
     
     
 </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-60530665-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
     </head>
 <body>
     <audio src="sounds/background.wav" autoplay="true" loop="true" preload="auto"></audio >
     <div id="d">
         <div id="header">
-<h1>The Pride Parade</h1>
+<h1>Road Runner</h1>
 </div>
 
 
@@ -371,13 +369,18 @@ function processData(allText) {
 <p id="status">
 You are starting with 10 people. Start traversing towards the end.
 </p>
+<span>Time left:&nbsp</span> 
+<span id="timer">
+20
+</span><span>&nbspseconds</span>
+
 </div>
         
 <div id="section">
 <h2>Rules</h2>
 <p id="status">
 <ul>
-    <li>You have to take the pride parade to the end <img src="images/finish.jpg"> with the maximum number of people you can gather.</li>
+    <li>You have to take the parade to the end <img src="images/finish.jpg"> with the maximum number of people you can gather.</li>
 <li>You have 20 seconds to finish the game. The timer will start on your first move.</li>
     <li>Your current location is represented by <img src="images/user.jpg"></li>
     <li>There are houses <img src="images/house.jpg"> containing 10 people and buildings <img src="images/house3.jpg"> containing 20 people. When you pass by a house or a building, all people living there will join the parade.</li>
@@ -391,11 +394,6 @@ You are starting with 10 people. Start traversing towards the end.
 </ul>
 </p>
 </div>
-
-<div id="footer">
-Created by Harsh Fatepuria, Rahul Agrawal, Simrat Singh Chhabra
-</div>
-    
     
     
     </div>
